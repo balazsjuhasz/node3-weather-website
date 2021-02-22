@@ -1,5 +1,7 @@
 const request = require('request');
-const dotenv = require('dotenv').config();
+if (process.env.NODE_ENV !== 'production') {
+  const dotenv = require('dotenv').config();
+}
 
 const geocode = (address, callback) => {
   const access_token = process.env.LOCATION_ACCESS_TOKEN;

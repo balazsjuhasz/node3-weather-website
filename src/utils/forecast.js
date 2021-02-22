@@ -1,5 +1,7 @@
 const request = require('request');
-const dotenv = require('dotenv').config();
+if (process.env.NODE_ENV !== 'production') {
+  const dotenv = require('dotenv').config();
+}
 
 const forecast = (latitude, longitude, callback) => {
   const access_key = process.env.FORECAST_ACCESS_KEY;
